@@ -1,0 +1,15 @@
+<div class="card">
+  <%# index.html.erbからrenderで@prototypeをもってきている %>
+  <%= link_to image_tag(prototype.image, class: :card__img ), prototype_path(prototype.id), method: :get %>
+  <%# prototype.imageで画像情報を取得 %>
+  <div class="card__body">
+    <%= link_to prototype.title, prototype_path(prototype.id), method: :get, class: :card__title%>
+    <p class="card__summary">
+      <%= prototype.catch_copy %>
+    </p>
+    <%= link_to prototype.user.name, user_path(prototype.id), class: :card__user %>
+    <%# user.nameで投稿者の名前を取得 %>
+  </div>
+</div>
+
+<%# <%= link_to '詳細', tweet_path(tweet.id), method: :get %>

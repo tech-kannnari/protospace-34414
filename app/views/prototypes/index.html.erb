@@ -1,0 +1,18 @@
+<main class="main">
+  <div class="inner">
+    <% if user_signed_in? %>
+      <%# ログインしているときは以下を表示する %>
+        <div class="greeting"> 
+           こんにちは、 
+        <%= link_to current_user.name, user_path(current_user.id), class: :greeting__link%> 
+        <%# "current_user.name"で現在ログインしているユーザーの名前を取得している %>
+        </div> 
+    <% end %>
+    <%# // ログインしているときは上記を表示する %>
+    <div class="card__wrapper">
+      <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
+      <%# <%= render partial: 'hoge', collection: @fuga（繰り返し表示する要素が入っているインスタンス） %> 
+      <%= render partial: "prototype", collection: @prototypes %>
+    </div>
+  </div>
+</main>
